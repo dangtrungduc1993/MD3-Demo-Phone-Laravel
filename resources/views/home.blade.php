@@ -1,1 +1,1 @@
-<a href="{{route('phone.list')}}">Phone List</a>
+<a href="{{route('phone.index')}}">Phone List</a>

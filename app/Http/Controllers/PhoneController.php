@@ -46,6 +46,5 @@ class PhoneController extends Controller
 
     public function destroy($id)
     {
-        //
-    }
+//        DB::table('phones')->where('id',$id)->delete();
 }

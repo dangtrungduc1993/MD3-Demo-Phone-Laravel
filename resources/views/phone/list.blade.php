@@ -26,8 +26,9 @@
                 <td>{{$phone->name}}</td>
                 <td>{{$phone->quantity}}</td>
                 <td>{{$phone->price}}</td>
-                <td><a href="{{route('phone.detail',$phone->id)}}">Detail</a></td>
-                <td><a href="{{route('phone.update',$phone->id)}}">Update</a></td>
+                <td><a href="{{route('phone.show',$phone->id)}}">Detail</a></td>
+                <td><a href="{{route('phone.edit',$phone->id)}}">Update</a></td>
+                <td><a href="{{route('phone.destroy',$phone->id)}}">Delete</a></td>
             </tr>
         @endforeach
         </tbody>
