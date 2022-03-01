@@ -23,7 +23,7 @@ class PhoneController extends Controller
     {
         $data = $request->only('name','quantity','price');
         DB::table('phones')->insert($data);
-        return redirect()->route('phone.list');
+        return redirect()->route('phone.index');
     }
 
     public function show($id)
@@ -34,17 +34,23 @@ class PhoneController extends Controller
 
     public function edit($id)
     {
-        return view('phone.update');
+        $phone = DB::table('phones')->where('id',$id)->first();
+
+        return view('phone.update',compact(['id','phone']));
+
     }
 
     public function update(Request $request, $id)
     {
+
         $data = $request->only('name','quantity','price');
+//        dd($data);
         DB::table('phones')->where('id',$id)->update($data);
-        return redirect()->route('phone.list');
+        return redirect()->route('phone.index');
     }
 
     public function destroy($id)
     {
-//        DB::table('phones')->where('id',$id)->delete();
-}
+        DB::table('phones')->where('id',$id)->delete();
+        return redirect()->route('phone.index');
+}}

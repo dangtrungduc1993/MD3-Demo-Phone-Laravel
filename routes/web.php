@@ -26,9 +26,9 @@ Route::prefix('phones')->group(function (){
     Route::get('/{id}/show',[PhoneController::class,'show'])->name('phone.show');
     Route::get('/create',[PhoneController::class,'create'])->name('phone.create');
     Route::post('/create',[PhoneController::class,'store'])->name('phone.store');
-    Route::post('{id}/delete',[PhoneController::class,'destroy'])->name('phone.destroy');
-    Route::get('/update',[PhoneController::class,'edit'])->name('phone.edit');
-    Route::post('/update',[PhoneController::class,'update'])->name('phone.update');
+    Route::get('/{id}/delete',[PhoneController::class,'destroy'])->name('phone.destroy');
+    Route::get('/{id}/update',[PhoneController::class,'edit'])->name('phone.edit');
+    Route::post('{id}/update',[PhoneController::class,'update'])->name('phone.update');
 });
 
 

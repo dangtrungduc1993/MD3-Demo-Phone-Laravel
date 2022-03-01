@@ -28,7 +28,7 @@
                 <td>{{$phone->price}}</td>
                 <td><a href="{{route('phone.show',$phone->id)}}">Detail</a></td>
                 <td><a href="{{route('phone.edit',$phone->id)}}">Update</a></td>
-                <td><a href="{{route('phone.destroy',$phone->id)}}">Delete</a></td>
+                <td><a onclick="return confirm('Are you sure?')" href="{{route('phone.destroy',$phone->id)}}">Delete</a></td>
             </tr>
         @endforeach
         </tbody>
